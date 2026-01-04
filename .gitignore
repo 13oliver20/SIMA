@@ -1,0 +1,68 @@
+# Este archivo protege credenciales y archivos sensibles
+# NO modificar sin revisar qué archivos estás exponiendo
+
+# === ARCHIVOS DE CONFIGURACIÓN CON CREDENCIALES ===
+# NUNCA subir estos archivos a GitHub
+.env
+.env.local
+.env.production
+config/credentials.php
+
+# === ARCHIVOS DE DEBUG ===
+debug_*.php
+test_*.php
+verificar*.php
+generar_hash.php
+listar_usuarios.php
+
+# === DIRECTORIOS DEL SISTEMA ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === PHP ===
+vendor/
+composer.lock
+*.log
+*.cache
+
+# === Uploads y archivos temporales ===
+uploads/tmp/
+temp/
+cache/
+logs/
+
+# === IDE y Editores ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# === Node (si usas npm) ===
+node_modules/
+package-lock.json
+yarn.lock
+
+# === Backups ===
+*.bak
+*.backup
+*.old
+
+# === Archivos temporales de Windows ===
+*.tmp
+*.temp
+
+# === Certificados y claves ===
+*.pem
+*.key
+*.cert
+*.crt
+
+# === Documentación temporal ===
+ENCONTRAR_API_KEY.md
+VERIFICAR_CONTRASEÑA.md
+CONFIGURAR_FIREWALL.md
+CONFIGURAR_XAMPP.md

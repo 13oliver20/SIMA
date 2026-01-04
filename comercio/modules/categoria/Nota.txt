@@ -1,0 +1,6 @@
+----------------categorias---------------
+1. ASOCIACION 
+2. MERCADOS
+3. AMBULANTES
+4. ALASCITAS
+5. HUAHUA
