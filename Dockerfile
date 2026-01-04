@@ -9,9 +9,12 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 COPY . .
 
+# Copiar script de inicio y dar permisos
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
 # Exponer puerto (Railway usa variable PORT)
 EXPOSE ${PORT:-8080}
 
-# Comando de inicio - Railway inyecta PORT automáticamente
-# Usar sh -c para que las variables se expandan correctamente
-CMD sh -c "php -S 0.0.0.0:${PORT} -t comercio"
+# Comando de inicio - ejecutar script
+CMD ["/app/start.sh"]
