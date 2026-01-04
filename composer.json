@@ -1,0 +1,11 @@
+{
+    "name": "sima/app",
+    "description": "Sistema de Información Municipal de Asociaciones",
+    "type": "project",
+    "require": {
+        "php": ">=8.2"
+    },
+    "scripts": {
+        "start": "php -S 0.0.0.0:$PORT -t comercio"
+    }
+}
