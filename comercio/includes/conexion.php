@@ -2,12 +2,12 @@
 // Incluir el adaptador PostgreSQL
 require_once 'PostgresAdapter.php';
 
-// Datos de conexión a Supabase (PostgreSQL directo)
-$host = 'db.ejtmcckwcfdgrqmdruax.supabase.co';
-$port = '5432';  // Puerto estándar PostgreSQL
-$user = 'postgres';
-$password = '6enniudV12@';  // Tu contraseña de Supabase
-$database = 'postgres';
+// Leer variables de entorno (Railway) con fallback a valores locales
+$host = getenv('DB_HOST') ?: 'db.ejtmcckwcfdgrqmdruax.supabase.co';
+$port = getenv('DB_PORT') ?: '5432';
+$user = getenv('DB_USER') ?: 'postgres';
+$password = getenv('DB_PASSWORD') ?: '6enniudV12@';
+$database = getenv('DB_NAME') ?: 'postgres';
 
 // Crear conexión usando PostgreSQL directo
 $conn = new PostgresAdapter($host, $user, $password, $database, $port);
