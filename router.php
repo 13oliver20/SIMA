@@ -12,9 +12,9 @@ if ($uri === '/health') {
     exit;
 }
 
-// Redirigir raíz a login
+// Redirigir raíz a login en comercio
 if ($uri === '/') {
-    header('Location: /login.php');
+    header('Location: /comercio/login.php');
     exit;
 }
 
