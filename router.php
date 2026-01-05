@@ -4,7 +4,7 @@
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-// Health check para Railway (solo /health)
+// Health check para Railway
 if ($uri === '/health') {
     http_response_code(200);
     header('Content-Type: text/plain');
@@ -12,14 +12,14 @@ if ($uri === '/health') {
     exit;
 }
 
-// Redirigir raíz a login en comercio
+// Redirigir raíz a login
 if ($uri === '/') {
     header('Location: /comercio/login.php');
     exit;
 }
 
-// Servir archivos estáticos desde comercio
-$file = __DIR__ . '/comercio' . $uri;
+// Servir archivos estáticos (sin duplicar /comercio)
+$file = __DIR__ . $uri;
 
 // Si es un archivo que existe, servirlo
 if (is_file($file)) {
@@ -34,7 +34,7 @@ if (is_dir($file) && file_exists($file . '/index.php')) {
 
 // Si la ruta no tiene extensión, intentar agregar .php
 if (!pathinfo($uri, PATHINFO_EXTENSION)) {
-    $phpFile = __DIR__ . '/comercio' . $uri . '.php';
+    $phpFile = __DIR__ . $uri . '.php';
     if (file_exists($phpFile)) {
         include $phpFile;
         exit;
